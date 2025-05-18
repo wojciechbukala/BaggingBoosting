@@ -104,6 +104,6 @@ def f1_score(y_true, y_pred, average='macro'):
             F1_sum += F1
         return F1_sum / number_of_classes
     elif average == "micro":
-        micro_precision = precision(y_test, y_pred, 'micro')
-        micro_recall = recall(y_test, y_pred, 'micro')
+        micro_precision = precision(y_true, y_pred, 'micro')
+        micro_recall = recall(y_true, y_pred, 'micro')
         return 2*(micro_precision*micro_recall)/(micro_precision+micro_recall)  

@@ -36,7 +36,7 @@ class KNNClassifier:
             mode_k_nearest = stats.mode([x[1] for x in k_nearest])
             y_pred.append(mode_k_nearest[0])
 
-        return y_pred
+        return pd.Series(y_pred, index=X_test.index)
         
     def euclidean_metrics(self, x1, x2):
         if len(x1) != len(x2):
